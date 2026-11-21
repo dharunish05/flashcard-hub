@@ -1,37 +1,17 @@
-const CACHE_NAME = 'flashcard-hub-pwa-v3';
+const CACHE_NAME = 'flashcard-hub-pwa-v4';
 const APP_ROOT = '/flashcard-hub/';
-const APP_SHELL = [
-  APP_ROOT,
-  APP_ROOT + 'manifest.webmanifest',
-  APP_ROOT + 'flashcard-icon.jpg'
-];
-
-self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then((cache) => cache.addAll(APP_SHELL))
-      .then(() => self.skipWaiting())
-  );
+const APP_SHELL = [APP_ROOT, APP_ROOT + 'manifest.webmanifest', APP_ROOT + 'flashcard-hub-icon.svg'];
+self.addEventListener('install', event => {
+  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)).then(() => self.skipWaiting()));
 });
-
-self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    caches.keys()
-      .then((keys) => Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))))
-      .then(() => self.clients.claim())
-  );
+self.addEventListener('activate', event => {
+  event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key)))).then(() => self.clients.claim()));
 });
-
-self.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', event => {
   const request = event.request;
   if (request.method !== 'GET' || new URL(request.url).origin !== self.location.origin) return;
-  event.respondWith(
-    fetch(request).then((response) => {
-      if (response && response.status === 200) {
-        const copy = response.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
-      }
-      return response;
-    }).catch(() => caches.match(request).then((cached) => cached || (request.mode === 'navigate' ? caches.match(APP_ROOT) : undefined)))
-  );
+  event.respondWith(fetch(request).then(response => {
+    if (response && response.ok) caches.open(CACHE_NAME).then(cache => cache.put(request, response.clone()));
+    return response;
+  }).catch(() => caches.match(request).then(cached => cached || (request.mode === 'navigate' ? caches.match(APP_ROOT) : undefined))));
 });
