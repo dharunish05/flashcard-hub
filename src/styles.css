@@ -47,3 +47,7 @@
 .theme-dark .icon-btn{color:#b6c5b9}
 .theme-dark .top{background:#202923}
 .theme-dark .sidebar{background:#202923}
+
+.brand-icon{object-fit:cover;border:1px solid #dce7ed}
+.theme-dark .brand-icon{background:transparent}
+.mobile-app-icon{width:25px;height:25px;object-fit:cover;border-radius:7px}
