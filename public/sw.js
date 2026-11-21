@@ -1,4 +1,4 @@
-const CACHE_NAME = 'flashcard-hub-pwa-v2';
+const CACHE_NAME = 'flashcard-hub-pwa-v3';
 const APP_ROOT = '/flashcard-hub/';
 const APP_SHELL = [
   APP_ROOT,
