@@ -6,7 +6,10 @@
   "start_url": "/flashcard-hub/",
   "scope": "/flashcard-hub/",
   "display": "standalone",
-  "display_override": ["standalone", "minimal-ui"],
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
   "orientation": "portrait",
   "background_color": "#f7f8f5",
   "theme_color": "#f7f8f5",
@@ -16,6 +19,12 @@
       "sizes": "any",
       "type": "image/jpeg",
       "purpose": "any"
+    },
+    {
+      "src": "/flashcard-hub/flashcard-icon.jpg",
+      "sizes": "any",
+      "type": "image/jpeg",
+      "purpose": "maskable"
     }
   ]
 }
