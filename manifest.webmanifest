@@ -1,0 +1,25 @@
+{
+  "name": "Flashcard Hub",
+  "short_name": "Flashcards",
+  "description": "A simple spaced-repetition flashcard study app.",
+  "start_url": "/flashcard-hub/",
+  "scope": "/flashcard-hub/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f7f8f5",
+  "theme_color": "#f7f8f5",
+  "icons": [
+    {
+      "src": "/flashcard-hub/flashcard-icon.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "/flashcard-hub/flashcard-icon.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
