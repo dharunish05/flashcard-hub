@@ -37,3 +37,13 @@
 .theme-dark .stat-icon{filter:brightness(.8)}
 .theme-dark .count-control{color:#afbcaf!important}
 @media(max-width:700px){.session-choice{padding:0 9px}.count-control input{width:52px}}
+
+/* Dark mode navigation chrome, including the mobile menu bar */
+.theme-dark .mobile-nav{background:#202923;border-top-color:#344138}
+.theme-dark .mobile-nav button{color:#a9b7ac}
+.theme-dark .mobile-nav button.active{color:#cce5d1}
+.theme-dark .nav.selected{background:#304638;color:#cce5d1}
+.theme-dark .brand-icon{background:#3d7552}
+.theme-dark .icon-btn{color:#b6c5b9}
+.theme-dark .top{background:#202923}
+.theme-dark .sidebar{background:#202923}
