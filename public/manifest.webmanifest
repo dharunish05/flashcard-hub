@@ -16,13 +16,13 @@
   "icons": [
     {
       "src": "/flashcard-hub/flashcard-icon.jpg",
-      "sizes": "any",
+      "sizes": "192x192 512x512",
       "type": "image/jpeg",
       "purpose": "any"
     },
     {
       "src": "/flashcard-hub/flashcard-icon.jpg",
-      "sizes": "any",
+      "sizes": "192x192 512x512",
       "type": "image/jpeg",
       "purpose": "maskable"
     }
