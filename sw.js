@@ -1,4 +1,4 @@
-const CACHE='flashcard-hub-shell-v1';
+const CACHE='flashcard-hub-shell-v2';
 const BASE='/flashcard-hub/';
 const CORE=[BASE,BASE+'index.html',BASE+'manifest.webmanifest',BASE+'flashcard-icon.jpg'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)));self.skipWaiting();});
